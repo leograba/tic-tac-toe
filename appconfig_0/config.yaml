@@ -1,0 +1,130 @@
+devices:
+    common: []
+    debug: []
+    release: []
+dockercomposefile:
+    common: ''
+    debug: ''
+    release: ''
+extraparms:
+    common: {}
+    debug: {}
+    release: {}
+id: a2d87c96-a197-40ff-aa3f-3c9b0519e706
+images:
+    debug: ''
+    release: ''
+imagetags:
+    debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706
+    release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706
+modificationdate: '2021-07-17T20:48:11.437029'
+networks:
+    common: []
+    debug: []
+    release: []
+platformid: arm64v8-wayland-base-vivante-no-ssh_bullseye
+ports:
+    common: {}
+    debug: {}
+    release: {}
+privatekey: '-----BEGIN RSA PRIVATE KEY-----
+
+    MIIEpAIBAAKCAQEAu759GZqnOoEtEkay2fG5vDu3cqvlrJhrz3R0QjWhoJSd//Pk
+
+    FiIdSMsDA6ojKpm0qhrLnmCwVRvh+IVWfDiS3I24JT3AYk/Sh9Ro2mxZKygFn82u
+
+    ibq8tjnnLSmTHQgyx1FA8nPPTymX4lwB59gwVIuwqsY1DRJEa536IbFHpXggV4Ls
+
+    zi/0PnIhNMAcNEo1GqMQVmpSq51qNQgELcDSG0ttr1saH7KPdXy6yUg8imzpTBQ9
+
+    6szjHO6Lz2rZAhwFArWrCljQaDWQmAjV01Z7ifyg97D9klIwHRT7bPIZLcUMX90W
+
+    Jflv/jUtadPTYztiUca3sMILG3l1B+f45j48cQIDAQABAoIBAQCvvPWZG/zhdL1d
+
+    2DPecrjri/KCMooA74QrYtTYjR9IExV62y9r0G8dDns52O6mF87XU9G55MPqRvlV
+
+    CmsUSFigf0AaDB2jaRim8JtdqgIltYbeOUfhwJyY7saIrdv5Vw1BKbvjt6gcb9Cu
+
+    oHVgMiu7WC79DB/opmrJWc0j8LAiIB9MMyo/EMebOpG+1R2cnYhAT0sRO/8mIQMa
+
+    43D8btSZ9A65sHBBXjt6TuenSYbHbwMt+r0rPLDHrWCoD520aU9AM6Cir/YdlMYC
+
+    BeqZ8qUZjN0DkU8rYHDSmSkfDOSeU10LAyheG6Oa4RCrweSATQqS1lNzwFDuCc7y
+
+    yvhwXG/JAoGBAOSVTx3fRf+f7JNyQFv1xNygmv76QOClTfB+eKzkV6HtP9ITm8hF
+
+    3aEB44CLuNQggjnQJviudGDKRyXRYXg5NX6lNce9a262+Mx7ZfTj95UCuJdkMsEj
+
+    HVTOp9yeAQzwjBXRo++mhvGU9l4iDRJfPYEPzCm5CC8qhIX3zpF+8FSnAoGBANJD
+
+    NMZNa74z3bnr5oPAtx4/IGp+gpBA8xISVvjPNUEiyKCmhpED2BDpDTjHcxbaA5zc
+
+    G4+90cT/k33W6LIZyWPZCO+NH3z+jUygMBVw4VzGcATd/TPG0S/KI/4zAuSmBCjy
+
+    oEK+fmE9RFYxEpgLNGSb9E1X7rhzvtawlBQA89EnAoGAcwabmImpfNgqQYxlzKDh
+
+    XrDHLnYaPbGRheruqPoDCy4LRpitdNuLiqEbra0h5kUxowwXAF8xmx9PLD2wEcKg
+
+    I8nZRVkRfdY/Xw7doJ0zEl4bK7u1OrGD6hBQMlmkZ7GInNYw68Dd+SWf0IDMGSmq
+
+    Fo8vivNcpfd8Vrn7zgWVxNMCgYB3bdcHICinw7wYg8bOZWNd2ctm0e8FUu79/87I
+
+    yqFcGw7MOWpL6lwK1uU8sAVOII1WxqsdDVueQvEa1DweFYmPnlJ2Brmw/MFzmbVW
+
+    KGTJlqlACntssmxVccLZ+02UZDwOqimfX6ZXQz6SmpMOK6cZ0n+EgwLEYHIwbeHe
+
+    LuBOlwKBgQDA3gHC0ysrdvPYK9Dc9zdGZzw/wn0FKxZE6rr9K8WZ6n4Lv8G22plu
+
+    hBVeo0Rk12R7Q4vngB6WOZQJkMutQj1JFWma7sl3mXiF8UQydohPcwHiiU1fCUfw
+
+    GZnwCMBgN/a3rlwtEzGOiWl06V99WZacWa/Z+duAzDm7ImsmlbtJ2A==
+
+    -----END RSA PRIVATE KEY-----
+
+    '
+props:
+    common:
+        appname: sdl2-learning
+        arg: ''
+        buildcommands: ''
+        buildfiles: ''
+        command: ''
+        devpackages: ''
+        env: ''
+        exename: sdl2-learning
+        expose: ''
+        extrapackages: ''
+        language: c-cpp-nossh
+        preinstallcommands: ''
+        sdkpostinstallcommands: ''
+        sdkpreinstallcommands: ''
+        targetcommands: ''
+        targetfiles: ''
+    debug:
+        arg: 'ARG SSHUSERNAME=#%application.username%#
+
+            '
+    release: {}
+publickey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7vn0Zmqc6gS0SRrLZ8bm8O7dyq+WsmGvPdHRCNaGglJ3/8+QWIh1IywMDqiMqmbSqGsueYLBVG+H4hVZ8OJLcjbglPcBiT9KH1GjabFkrKAWfza6Jury2OectKZMdCDLHUUDyc89PKZfiXAHn2DBUi7CqxjUNEkRrnfohsUeleCBXguzOL/Q+ciE0wBw0SjUaoxBWalKrnWo1CAQtwNIbS22vWxofso91fLrJSDyKbOlMFD3qzOMc7ovPatkCHAUCtasKWNBoNZCYCNXTVnuJ/KD3sP2SUjAdFPts8hktxQxf3RYl+W/+NS1p09NjO2JRxrewwgsbeXUH5/jmPjxx
+sdkimages:
+    debug: ''
+    release: ''
+sdkimagetags:
+    debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image
+    release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image
+sdksshaddress:
+    debug: null
+    release: null
+shutdownscript:
+    common: ''
+    debug: ''
+    release: ''
+startupscript:
+    common: ''
+    debug: ''
+    release: ''
+username: torizon
+volumes:
+    common: {}
+    debug: {}
+    release: {}
