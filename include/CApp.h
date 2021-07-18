@@ -7,6 +7,9 @@ class CApp {
     private:
         bool Running;
 
+        SDL_Window *window;
+        SDL_Renderer *renderer;
+
     public:
         CApp();
 

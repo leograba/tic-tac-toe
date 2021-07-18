@@ -2,6 +2,8 @@
 
 CApp::CApp() {
     Running = true;
+    window = NULL;
+    renderer = NULL;
 }
 
 int CApp::OnExecute() {
