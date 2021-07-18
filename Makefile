@@ -1,16 +1,30 @@
-DEPS = sdl2-learning.h
-OBJ = sdl2-learning.o
+# Source Files
+SRC := src/
+SRCS := $(wildcard $(SRC)*.cpp)
 
-%.o : %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+# Source Objects
+OBJ := bin/
+OBJS := $(patsubst $(SRC)%.cpp,$(OBJ)%.o,$(SRCS))
+#OBJ = CApp.o CApp_OnInit.o
 
-sdl2-learning: $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
+# Header Files
+HEADERS := include/
+DEPS = $(HEADERS)CApp.h
 
-install: sdl2-learning
+SDL_CFLAGS := $(shell sdl2-config --cflags)
+SDL_LDFLAGS := $(shell sdl2-config --libs)
+
+$(OBJ)%.o : $(SRC)%.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS) $(SDL_CFLAGS) -I$(HEADERS)
+
+capp: $(OBJS)
+	$(CC) -o $@ $^ $(CFLAGS) $(SDL_LDFLAGS)
+
+install: capp
 	mkdir -p $(WORKDIR)
-	cp sdl2-learning $(WORKDIR)/
+	cp capp $(WORKDIR)/
 
 clean:
 	rm -f *.o
-	rm -f sdl2-learning
+	rm -f $(OBJ)*.o
+	rm -f capp
