@@ -12,12 +12,12 @@ extraparms:
     release: {}
 id: a2d87c96-a197-40ff-aa3f-3c9b0519e706
 images:
-    debug: ''
+    debug: sha256:dc80de624feca61c6b92e2018f0f75e7d65d1e2c6a4a1f0ab64768fcfaa04937
     release: ''
 imagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706
     release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706
-modificationdate: '2021-07-17T20:48:11.437029'
+modificationdate: '2021-07-18T13:51:39.493253'
 networks:
     common: []
     debug: []
@@ -89,11 +89,27 @@ props:
         buildcommands: ''
         buildfiles: ''
         command: ''
-        devpackages: ''
-        env: ''
-        exename: sdl2-learning
+        devpackages: git cmake ninja-build zip unzip gettext asciidoctor libpng-dev:#%platform.debian-arch%#
+            libsdl2-dev:#%platform.debian-arch%# libopenal-dev:#%platform.debian-arch%#
+            libphysfs-dev:#%platform.debian-arch%# libvorbis-dev:#%platform.debian-arch%#
+            libtheora-dev:#%platform.debian-arch%# libxrandr-dev:#%platform.debian-arch%#
+            libfribidi-dev:#%platform.debian-arch%# libfreetype6-dev:#%platform.debian-arch%#
+            libharfbuzz-dev:#%platform.debian-arch%# libfontconfig1-dev:#%platform.debian-arch%#
+            libcurl4-gnutls-dev:#%platform.debian-arch%# gnutls-dev:#%platform.debian-arch%#
+            libsodium-dev:#%platform.debian-arch%# libsqlite3-dev:#%platform.debian-arch%#
+            libvulkan-dev:#%platform.debian-arch%# libwayland-dev:#%platform.debian-arch%#
+            imx-gpu-viv-wayland-dev:#%platform.debian-arch%# libglew-dev:#%platform.debian-arch%#
+            glslang-dev:#%platform.debian-arch%# libglm-dev:#%platform.debian-arch%#
+            gambas3-gb-opengl-glsl:#%platform.debian-arch%#
+        env: ENV SDL_VIDEODRIVER="wayland" ACCEPT_FSL_EULA=1
+        exename: capp
         expose: ''
-        extrapackages: ''
+        extrapackages: libpng16-16 libopenal1 libphysfs1 libvorbis0a libvorbisfile3
+            libvorbisidec1 libvorbis-ocaml libtheora0 libtheora-ocaml libtheora-bin
+            libxrandr2 libfribidi-bin libfribidi0 libfreetype6 libharfbuzz0b libharfbuzz-bin
+            libharfbuzz-gobject0 libharfbuzz-icu0 libfontconfig1 libcurl4 libcurl3-gnutls
+            libgnutls30 libgnutlsxx28  libsodium23 libsqlite3-0 libsqlite3-ocaml xdg-utils
+            libsdl2-2.0-0
         language: c-cpp-nossh
         preinstallcommands: ''
         sdkpostinstallcommands: ''
@@ -107,7 +123,7 @@ props:
     release: {}
 publickey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7vn0Zmqc6gS0SRrLZ8bm8O7dyq+WsmGvPdHRCNaGglJ3/8+QWIh1IywMDqiMqmbSqGsueYLBVG+H4hVZ8OJLcjbglPcBiT9KH1GjabFkrKAWfza6Jury2OectKZMdCDLHUUDyc89PKZfiXAHn2DBUi7CqxjUNEkRrnfohsUeleCBXguzOL/Q+ciE0wBw0SjUaoxBWalKrnWo1CAQtwNIbS22vWxofso91fLrJSDyKbOlMFD3qzOMc7ovPatkCHAUCtasKWNBoNZCYCNXTVnuJ/KD3sP2SUjAdFPts8hktxQxf3RYl+W/+NS1p09NjO2JRxrewwgsbeXUH5/jmPjxx
 sdkimages:
-    debug: ''
+    debug: sha256:9cd9bbaf3c1baa27ad5d26be866a141bba6cf354c1b6c1f0b3d1c9c8693ea60f
     release: ''
 sdkimagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image
@@ -126,5 +142,6 @@ startupscript:
 username: torizon
 volumes:
     common: {}
-    debug: {}
+    debug:
+        /home/torizon/sdl2-learning: /sdl2-learning,rw
     release: {}

@@ -9,7 +9,7 @@
             "compilerPath": "${env:CC}",
             "cStandard": "c11",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": ""
+            "intelliSenseMode": "gcc-arm64"
         }
     ],
     "version": 4

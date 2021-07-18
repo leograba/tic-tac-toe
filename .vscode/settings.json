@@ -1,3 +1,4 @@
 {
-    "torizon.configuration": "debug"
+    "torizon.configuration": "debug",
+    "torizon.appfolder": "appconfig_0"
 }

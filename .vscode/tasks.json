@@ -15,7 +15,10 @@
                     "CXXFLAGS": "-g"
                 }
             },
-            "group": "build"
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "build_release",
@@ -55,5 +58,10 @@
             "type": "shell",
             "group": "none"
         }
-    ]
+    ],
+    "options": {
+        "env": {
+            "TORIZON_PROP_ARG": "ARG SSHUSERNAME=#%application.username%#\n"
+        }
+    }
 }
