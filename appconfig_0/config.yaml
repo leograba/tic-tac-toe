@@ -13,12 +13,12 @@ extraparms:
     release: {}
 id: a2d87c96-a197-40ff-aa3f-3c9b0519e706
 images:
-    debug: sha256:dc80de624feca61c6b92e2018f0f75e7d65d1e2c6a4a1f0ab64768fcfaa04937
+    debug: sha256:f3caa8461c7e7da2f817a8586444882354be2b3599fd38b8c4e6bdf61158fe65
     release: ''
 imagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706
     release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706
-modificationdate: '2021-07-18T14:46:43.342916'
+modificationdate: '2021-07-18T17:06:03.519665'
 networks:
     common: []
     debug: []
