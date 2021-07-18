@@ -1,4 +1,5 @@
 appconfig_*/work
 *.o
 *.log
-sdl2-learning
+bin
+capp
