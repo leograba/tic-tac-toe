@@ -49,6 +49,11 @@ bool CApp::OnInit() {
         exit(1);
     }
 
+    if ((mytexture = CTexture::OnLoad(renderer, "assets/img/tdx-eyes.png")) == NULL)
+    {
+        return false;
+    }
+
     //Render something
     SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 

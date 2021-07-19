@@ -4,6 +4,7 @@ CApp::CApp() {
     Running = true;
     window = NULL;
     renderer = NULL;
+    mytexture = NULL;
 }
 
 int CApp::OnExecute() {
@@ -23,6 +24,8 @@ int CApp::OnExecute() {
 
         OnLoop();
         OnRender();
+
+        SDL_Delay(15);
     }
 
     OnCleanup();

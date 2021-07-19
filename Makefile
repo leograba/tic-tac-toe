@@ -11,9 +11,12 @@ OBJS := $(patsubst $(SRC)%.cpp,$(OBJ)%.o,$(SRCS))
 HEADERS := include/
 DEPS = $(HEADERS)CApp.h
 
+# Assets (images, fonts, etc.)
+ASSETS := assets/
+
 # Flags
 SDL_CFLAGS := $(shell sdl2-config --cflags)
-SDL_LDFLAGS := $(shell sdl2-config --libs)
+SDL_LDFLAGS := $(shell sdl2-config --libs) -lSDL2_image
 
 CFLAGS := $(CFLAGS) -Wall -Werror -pedantic -Wshadow -Wstrict-aliasing -Wstrict-overflow -I/usr/include
 LDFLAGS := $(shell pkg-config --libs glesv2)
@@ -24,9 +27,10 @@ $(OBJ)%.o : $(SRC)%.cpp $(DEPS)
 capp: $(OBJS)
 	$(CXX) -o $@ $^ $(CFLAGS) $(SDL_LDFLAGS) $(LDFLAGS)
 
-install: capp
+install: capp $(ASSETS)
 	mkdir -p $(WORKDIR)
 	cp capp $(WORKDIR)/
+	cp -r $(ASSETS) $(WORKDIR)
 
 clean:
 	rm -f *.o
