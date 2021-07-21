@@ -3,9 +3,10 @@
 
 #include <SDL2/SDL.h>
 #include "CTexture.h"
+#include "CEvent.h"
 //#include <SDL2/SDL_opengles2.h>
 
-class CApp {
+class CApp : public CEvent {
     private:
         bool Running;
 
@@ -22,6 +23,8 @@ class CApp {
         bool OnInit();
 
         void OnEvent(SDL_Event *Event);
+
+        void OnExit();
 
         void OnLoop();
 
