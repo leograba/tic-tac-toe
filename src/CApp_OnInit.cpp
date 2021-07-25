@@ -77,5 +77,7 @@ bool CApp::OnInit() {
     //Show all the has been done behind the scenes
     SDL_RenderPresent(renderer);
 
+    Reset(GAME_START);
+
     return true;
 }

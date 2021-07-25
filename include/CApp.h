@@ -18,6 +18,22 @@ class CApp : public CEvent {
         SDL_Texture *mark_x;
         SDL_Texture *mark_o;
 
+    private:
+        int GridStatus[9];
+        int CurrentPlayer;
+        int Winner;
+        enum
+        {
+            GRID_TYPE_NONE = 0,
+            GRID_TYPE_X,
+            GRID_TYPE_O
+        };
+        enum
+        {
+            GAME_START = 0,
+            GAME_RESTART
+        };
+
     public:
         CApp();
 
@@ -28,6 +44,10 @@ class CApp : public CEvent {
 
         void OnEvent(SDL_Event *Event);
 
+        void CheckWinner();
+
+        void OnLButtonDown(int mX, int mY);
+
         void OnExit();
 
         void OnLoop();
@@ -35,6 +55,10 @@ class CApp : public CEvent {
         void OnRender();
 
         void OnCleanup();
+
+        void Reset(int init);
+
+        void SetCell(int ID, int Type);
 };
 
 #endif
