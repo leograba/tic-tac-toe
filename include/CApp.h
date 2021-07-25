@@ -12,7 +12,11 @@ class CApp : public CEvent {
 
         SDL_Window *window;
         SDL_Renderer *renderer;
-        SDL_Texture *mytexture;
+
+        // grid, X and O for tic-tac-toe
+        SDL_Texture *grid;
+        SDL_Texture *mark_x;
+        SDL_Texture *mark_o;
 
     public:
         CApp();

@@ -1,7 +1,7 @@
 #include "CApp.h"
 #include <iostream>
 
-#define SCREEN_WIDTH 640
+#define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 480
 
 bool CApp::OnInit() {
@@ -49,7 +49,18 @@ bool CApp::OnInit() {
         exit(1);
     }
 
-    if ((mytexture = CTexture::OnLoad(renderer, "assets/img/tdx-eyes.png")) == NULL)
+    //load the game textures, grid, X and O
+    if ((grid = CTexture::OnLoad(renderer, "assets/img/grid.png")) == NULL)
+    {
+        return false;
+    }
+
+    if ((mark_x = CTexture::OnLoad(renderer, "assets/img/x.png")) == NULL)
+    {
+        return false;
+    }
+
+    if ((mark_o = CTexture::OnLoad(renderer, "assets/img/o.png")) == NULL)
     {
         return false;
     }

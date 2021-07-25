@@ -1,7 +1,9 @@
 #include "CApp.h"
 
 void CApp::OnCleanup() {
-    SDL_DestroyTexture(mytexture);
+    SDL_DestroyTexture(grid);
+    SDL_DestroyTexture(mark_x);
+    SDL_DestroyTexture(mark_o);
 
     if (renderer){
         SDL_DestroyRenderer(renderer);

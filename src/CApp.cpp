@@ -4,7 +4,10 @@ CApp::CApp() {
     Running = true;
     window = NULL;
     renderer = NULL;
-    mytexture = NULL;
+
+    grid = NULL;
+    mark_x = NULL;
+    mark_o = NULL;
 }
 
 int CApp::OnExecute() {

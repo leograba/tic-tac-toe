@@ -20,6 +20,18 @@ SDL_Texture *CTexture::OnLoad(SDL_Renderer *renderer, std::string Filename)
     return texture;
 }
 
+bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture)
+{
+    if (renderer == NULL || texture == NULL)
+    {
+        return false;
+    }
+
+    SDL_RenderCopy(renderer, texture, NULL, NULL);
+
+    return true;
+}
+
 bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y)
 {
     if (renderer == NULL || texture == NULL)
@@ -32,6 +44,19 @@ bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y
     DestR.y = y;
     SDL_QueryTexture(texture, NULL, NULL, &DestR.w, &DestR.h);
 
+    SDL_RenderCopy(renderer, texture, NULL, &DestR);
+
+    return true;
+}
+
+bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y, int w, int h)
+{
+    if (renderer == NULL || texture == NULL)
+    {
+        return false;
+    }
+
+    SDL_Rect DestR = {x, y, w, h};
     SDL_RenderCopy(renderer, texture, NULL, &DestR);
 
     return true;
