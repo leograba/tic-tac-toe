@@ -5,7 +5,8 @@ bool CApp::OnInit() {
     int rendererFlags, windowFlags;
 
     rendererFlags = SDL_RENDERER_ACCELERATED;
-    windowFlags = SDL_WINDOW_OPENGL;
+    windowFlags = SDL_WINDOW_OPENGL |
+                  SDL_WINDOW_RESIZABLE;
 
     //initialize SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
@@ -23,7 +24,7 @@ bool CApp::OnInit() {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     //create window
-    app.window = SDL_CreateWindow("CApp 01", SDL_WINDOWPOS_CENTERED,
+    app.window = SDL_CreateWindow("tic-tac-toe", SDL_WINDOWPOS_CENTERED,
                               SDL_WINDOWPOS_CENTERED, app.width,
                               app.height, windowFlags);
 

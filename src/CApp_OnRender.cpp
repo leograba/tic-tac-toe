@@ -1,12 +1,13 @@
 #include "CApp.h"
 #include <iostream>
+#include <algorithm>
 
 void CApp::OnRender()
 {
-    int *win_w = NULL;
-    int *win_h = NULL;
-    SDL_GetWindowSize(app.window, win_w, win_h);
 
+    SDL_GetWindowSize(app.window, &app.width, &app.height);
+    int min_dim = std::min(app.width, app.height);
+    int third = min_dim / 3;
     SDL_RenderClear(app.renderer);
 
     //some tests to understand position
@@ -16,21 +17,21 @@ void CApp::OnRender()
     //CTexture::OnDraw(renderer, mark_o, 320, 0, 160, 160);
 
     //draw the grid
-    CTexture::OnDraw(app.renderer, grid, 160, 0, 480, 480);
+    CTexture::OnDraw(app.renderer, grid, 0, 0, min_dim, min_dim);
 
     //draw the X's and O's
     for (int i = 0; i < 9; i++)
     {
-        int x = (i % 3) * 160 + 160;
-        int y = (i / 3) * 160;
+        int x = (i % 3) * third;
+        int y = (i / 3) * third;
 
         if (GridStatus[i] == GRID_TYPE_X)
         {
-            CTexture::OnDraw(app.renderer, mark_x, x, y, 160, 160);
+            CTexture::OnDraw(app.renderer, mark_x, x, y, third, third);
         }
         else if (GridStatus[i] == GRID_TYPE_O)
         {
-            CTexture::OnDraw(app.renderer, mark_o, x, y, 160, 160);
+            CTexture::OnDraw(app.renderer, mark_o, x, y, third, third);
         }
     }
     SDL_RenderPresent(app.renderer);
@@ -43,16 +44,16 @@ void CApp::OnRender()
         switch (Winner)
         {
         case GRID_TYPE_NONE: // draw
-            CTexture::OnDraw(app.renderer, grid, 160, 0, 480, 480);
-            CTexture::OnDraw(app.renderer, mark_x, 0, 0, 480, 480);
-            CTexture::OnDraw(app.renderer, mark_o, 320, 0, 480, 480);
+            CTexture::OnDraw(app.renderer, grid, 0, 0, min_dim, min_dim);
+            CTexture::OnDraw(app.renderer, mark_x, 0, 0, min_dim, min_dim);
+            CTexture::OnDraw(app.renderer, mark_o, app.width - min_dim, 0, min_dim, min_dim);
             break;
         case GRID_TYPE_X: // X win
-            CTexture::OnDraw(app.renderer, grid, 160, 0, 480, 480);
+            CTexture::OnDraw(app.renderer, grid, 0, 0, min_dim, min_dim);
             CTexture::OnDraw(app.renderer, mark_x);
             break;
         case GRID_TYPE_O: // O win
-            CTexture::OnDraw(app.renderer, grid, 160, 0, 480, 480);
+            CTexture::OnDraw(app.renderer, grid, 0, 0, min_dim, min_dim);
             CTexture::OnDraw(app.renderer, mark_o);
             break;
         default:

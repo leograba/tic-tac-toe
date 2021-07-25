@@ -19,9 +19,10 @@ class CApp : public CEvent {
             SDL_Renderer *renderer;
 
             // game constants
-            uint16_t width;
-            uint16_t height;
-        } app;
+            int width;
+            int height;
+        };
+        App app = {true, NULL, NULL, 800, 480};
 
         // game textures
         SDL_Texture *grid;

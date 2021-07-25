@@ -1,5 +1,6 @@
 #include "CApp.h"
 #include <iostream>
+#include <algorithm>
 
 void CApp::OnEvent(SDL_Event *Event)
 {
@@ -8,12 +9,14 @@ void CApp::OnEvent(SDL_Event *Event)
 
 void CApp::OnLButtonDown(int mX, int mY)
 {
-    if (mX < 160 || mX > 160 * 4)
+    std::cout << "x / y are: " << mX << " / " << mY << std::endl;
+    // The grid is a square, don't accept clicks outside it
+    if (mX > std::min(app.width, app.height))
     {
         return;
     }
 
-    int ID = (mX - 160) / 160;
+    int ID = (mX) / 160;
     ID = ID + ((mY / 160) * 3);
 
     if (GridStatus[ID] != GRID_TYPE_NONE)

@@ -2,13 +2,6 @@
 
 CApp::CApp() {
 
-    // Initialize app variables
-    app.Running = true;
-    app.window = NULL;
-    app.renderer = NULL;
-    app.width = 800;
-    app.height = 480;
-
     // Initialize textures
     grid = NULL;
     mark_x = NULL;
