@@ -60,40 +60,51 @@ void CApp::SetCell(int ID, int Type)
     GridStatus[ID] = Type;
 }
 
+void CApp::ComputeScore(int winner)
+{
+    if (winner == GRID_TYPE_NONE)
+        score.score_tie++;
+    else if (winner == GRID_TYPE_X)
+        score.score_x++;
+    else if (winner == GRID_TYPE_O)
+        score.score_o++;
+    Winner = winner;
+}
+
 void CApp::CheckWinner()
 {
     //8 ways to win
     if (GridStatus[0] != GRID_TYPE_NONE && GridStatus[0] == GridStatus[1] && GridStatus[1] == GridStatus[2])
     {
-        Winner = GridStatus[0];
+        ComputeScore(GridStatus[0]);
     }
     else if ((GridStatus[3] != GRID_TYPE_NONE && GridStatus[3] == GridStatus[4] && GridStatus[4] == GridStatus[5]))
     {
-        Winner = GridStatus[3];
+        ComputeScore(GridStatus[3]);
     }
     else if ((GridStatus[6] != GRID_TYPE_NONE && GridStatus[6] == GridStatus[7] && GridStatus[7] == GridStatus[8]))
     {
-        Winner = GridStatus[6];
+        ComputeScore(GridStatus[6]);
     }
     else if ((GridStatus[0] != GRID_TYPE_NONE && GridStatus[0] == GridStatus[3] && GridStatus[3] == GridStatus[6]))
     {
-        Winner = GridStatus[0];
+        ComputeScore(GridStatus[0]);
     }
     else if ((GridStatus[1] != GRID_TYPE_NONE && GridStatus[1] == GridStatus[4] && GridStatus[4] == GridStatus[7]))
     {
-        Winner = GridStatus[1];
+        ComputeScore(GridStatus[1]);
     }
     else if ((GridStatus[2] != GRID_TYPE_NONE && GridStatus[2] == GridStatus[5] && GridStatus[5] == GridStatus[8]))
     {
-        Winner = GridStatus[2];
+        ComputeScore(GridStatus[2]);
     }
     else if ((GridStatus[0] != GRID_TYPE_NONE && GridStatus[0] == GridStatus[4] && GridStatus[4] == GridStatus[8]))
     {
-        Winner = GridStatus[0];
+        ComputeScore(GridStatus[0]);
     }
     else if ((GridStatus[2] != GRID_TYPE_NONE && GridStatus[2] == GridStatus[4] && GridStatus[4] == GridStatus[6]))
     {
-        Winner = GridStatus[2];
+        ComputeScore(GridStatus[2]);
     }
     else if (GridStatus[0] != GRID_TYPE_NONE &&
             GridStatus[1] != GRID_TYPE_NONE &&
@@ -105,7 +116,7 @@ void CApp::CheckWinner()
             GridStatus[7] != GRID_TYPE_NONE &&
             GridStatus[8] != GRID_TYPE_NONE)
     {
-        Winner = GRID_TYPE_NONE;
+        ComputeScore(GRID_TYPE_NONE);
     }
     return;
 }

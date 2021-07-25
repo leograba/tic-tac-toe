@@ -36,6 +36,14 @@ class CApp : public CEvent {
         int GridStatus[9];
         int CurrentPlayer;
         int Winner;
+        struct Score
+        {
+            int score_x;
+            int score_o;
+            int score_tie;
+        };
+        Score score = {0, 0, 0};
+
         enum
         {
             GRID_TYPE_NONE = 0,
@@ -57,6 +65,8 @@ class CApp : public CEvent {
         bool OnInit();
 
         void OnEvent(SDL_Event *Event);
+
+        void ComputeScore(int winner);
 
         void CheckWinner();
 
