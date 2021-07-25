@@ -71,7 +71,7 @@ bool CApp::OnInit() {
 
     //Set colour of renderer
     //Grid Blue is #7097B3
-    SDL_SetRenderDrawColor(app.renderer, 0xFF, 0xFF, 0xFF, SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(app.renderer, 0x70, 0x97, 0xB3, SDL_ALPHA_OPAQUE);
 
     //Clear the screen to the set colour
     SDL_RenderClear(app.renderer);
