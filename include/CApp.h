@@ -21,8 +21,11 @@ class CApp : public CEvent {
             // game constants
             int width;
             int height;
+
+            int grid_size;
+            int mark_size;
         };
-        App app = {true, NULL, NULL, 800, 480};
+        App app = {true, NULL, NULL, 800, 480, 480, 480/3};
 
         // game textures
         SDL_Texture *grid;
@@ -58,6 +61,8 @@ class CApp : public CEvent {
         void CheckWinner();
 
         void OnLButtonDown(int mX, int mY);
+
+        void OnResize(int width, int height);
 
         void OnExit();
 

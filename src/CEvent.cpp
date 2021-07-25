@@ -19,69 +19,69 @@ void CEvent::OnEvent(SDL_Event *Event)
             switch (Event->window.event)
             {
                 case SDL_WINDOWEVENT_SHOWN:
-                    SDL_Log("Window %d shown", Event->window.windowID);
+                    //SDL_Log("Window %d shown", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_HIDDEN:
-                    SDL_Log("Window %d hidden", Event->window.windowID);
+                    //SDL_Log("Window %d hidden", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_EXPOSED:
-                    SDL_Log("Window %d exposed", Event->window.windowID);
+                    //SDL_Log("Window %d exposed", Event->window.windowID);
                     OnExpose();
                     break;
                 case SDL_WINDOWEVENT_MOVED:
-                    SDL_Log("Window %d moved to %d,%d",
-                            Event->window.windowID, Event->window.data1,
-                            Event->window.data2);
+                    //SDL_Log("Window %d moved to %d,%d",
+                    //        Event->window.windowID, Event->window.data1,
+                    //        Event->window.data2);
                     break;
                 case SDL_WINDOWEVENT_RESIZED:
-                    SDL_Log("Window %d resized to %dx%d",
-                            Event->window.windowID, Event->window.data1,
-                            Event->window.data2);
-                    OnResize(Event->window.data1, Event->window.data2);
+                    //SDL_Log("Window %d resized to %dx%d",
+                    //        Event->window.windowID, Event->window.data1,
+                    //        Event->window.data2);
+                    //OnResize(Event->window.data1, Event->window.data2);
                     break;
                 case SDL_WINDOWEVENT_SIZE_CHANGED:
-                    SDL_Log("Window %d size changed to %dx%d",
-                            Event->window.windowID, Event->window.data1,
-                            Event->window.data2);
+                    //SDL_Log("Window %d size changed to %dx%d",
+                    //        Event->window.windowID, Event->window.data1,
+                    //        Event->window.data2);
                     OnResize(Event->window.data1, Event->window.data2);
                     break;
                 case SDL_WINDOWEVENT_MINIMIZED:
-                    SDL_Log("Window %d minimized", Event->window.windowID);
+                    //SDL_Log("Window %d minimized", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_MAXIMIZED:
-                    SDL_Log("Window %d maximized", Event->window.windowID);
+                    //SDL_Log("Window %d maximized", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_RESTORED:
-                    SDL_Log("Window %d restored", Event->window.windowID);
+                    //SDL_Log("Window %d restored", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_ENTER:
-                    SDL_Log("Mouse entered window %d",
-                            Event->window.windowID);
+                    //SDL_Log("Mouse entered window %d",
+                    //        Event->window.windowID);
                     OnMouseFocus();
                     break;
                 case SDL_WINDOWEVENT_LEAVE:
-                    SDL_Log("Mouse left window %d", Event->window.windowID);
+                    //SDL_Log("Mouse left window %d", Event->window.windowID);
                     OnMouseBlur();
                     break;
                 case SDL_WINDOWEVENT_FOCUS_GAINED:
-                    SDL_Log("Window %d gained keyboard focus",
-                            Event->window.windowID);
+                    //SDL_Log("Window %d gained keyboard focus",
+                    //        Event->window.windowID);
                     OnInputFocus();
                     break;
                 case SDL_WINDOWEVENT_FOCUS_LOST:
-                    SDL_Log("Window %d lost keyboard focus",
-                            Event->window.windowID);
+                    //SDL_Log("Window %d lost keyboard focus",
+                    //        Event->window.windowID);
                     OnInputBlur();
                     break;
                 case SDL_WINDOWEVENT_CLOSE:
-                    SDL_Log("Window %d closed", Event->window.windowID);
+                    //SDL_Log("Window %d closed", Event->window.windowID);
                     break;
                 #if SDL_VERSION_ATLEAST(2, 0, 5)
                 case SDL_WINDOWEVENT_TAKE_FOCUS:
-                    SDL_Log("Window %d is offered a focus", Event->window.windowID);
+                    //SDL_Log("Window %d is offered a focus", Event->window.windowID);
                     break;
                 case SDL_WINDOWEVENT_HIT_TEST:
-                    SDL_Log("Window %d has a special hit test", Event->window.windowID);
+                    //SDL_Log("Window %d has a special hit test", Event->window.windowID);
                     break;
                 #endif
                 default:

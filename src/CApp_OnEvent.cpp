@@ -9,9 +9,8 @@ void CApp::OnEvent(SDL_Event *Event)
 
 void CApp::OnLButtonDown(int mX, int mY)
 {
-    std::cout << "x / y are: " << mX << " / " << mY << std::endl;
     // The grid is a square, don't accept clicks outside it
-    if (mX > std::min(app.width, app.height))
+    if (mX > app.grid_size || mY > app.grid_size)
     {
         return;
     }
@@ -36,6 +35,15 @@ void CApp::OnLButtonDown(int mX, int mY)
     }
 
     CheckWinner();
+}
+
+void CApp::OnResize(int width, int height)
+{
+    app.width = width;
+    app.height = height;
+    app.grid_size = std::min(width, height);
+    app.mark_size = app.grid_size / 3;
+    SDL_RenderSetLogicalSize(app.renderer, app.width, app.height);
 }
 
 void CApp::OnExit()

@@ -34,6 +34,9 @@ bool CApp::OnInit() {
         exit(1);
     }
 
+    // Get Window size
+    SDL_GetWindowSize(app.window, &app.width, &app.height);
+
     //Suggest OpenGL ES 2
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
     SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengles2");
