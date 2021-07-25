@@ -1,15 +1,20 @@
 #include "CApp.h"
 
 CApp::CApp() {
-    Running = true;
 
-    window = NULL;
-    renderer = NULL;
+    // Initialize app variables
+    app.Running = true;
+    app.window = NULL;
+    app.renderer = NULL;
+    app.width = 800;
+    app.height = 480;
 
+    // Initialize textures
     grid = NULL;
     mark_x = NULL;
     mark_o = NULL;
 
+    // Initialize game state
     CurrentPlayer = 0;
     Winner = -1;
 }
@@ -22,7 +27,7 @@ int CApp::OnExecute() {
 
     SDL_Event Event;
 
-    while (Running)
+    while (app.Running)
     {
         while (SDL_PollEvent(&Event))
         {
@@ -48,6 +53,7 @@ void CApp::Reset(int init)
     }
     if (init == GAME_RESTART)
         SDL_Delay(5000);
+    CurrentPlayer = 0;
     Winner = -1;
 }
 

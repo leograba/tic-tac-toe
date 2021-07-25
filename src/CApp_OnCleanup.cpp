@@ -5,14 +5,15 @@ void CApp::OnCleanup() {
     SDL_DestroyTexture(mark_x);
     SDL_DestroyTexture(mark_o);
 
-    if (renderer){
-        SDL_DestroyRenderer(renderer);
-        renderer = NULL;
+    if (app.renderer){
+        SDL_DestroyRenderer(app.renderer);
+        app.renderer = NULL;
     }
 
-    if (window){
-        SDL_DestroyWindow(window);
-        window = NULL;
+    if (app.window)
+    {
+        SDL_DestroyWindow(app.window);
+        app.window = NULL;
     }
 
     IMG_Quit();

@@ -37,5 +37,5 @@ void CApp::OnLButtonDown(int mX, int mY)
 
 void CApp::OnExit()
 {
-    Running = false;
+    app.Running = false;
 }

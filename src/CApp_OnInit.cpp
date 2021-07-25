@@ -1,9 +1,6 @@
 #include "CApp.h"
 #include <iostream>
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 480
-
 bool CApp::OnInit() {
     int rendererFlags, windowFlags;
 
@@ -26,11 +23,11 @@ bool CApp::OnInit() {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     //create window
-    window = SDL_CreateWindow("CApp 01", SDL_WINDOWPOS_CENTERED,
-                              SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
-                              SCREEN_HEIGHT, windowFlags);
+    app.window = SDL_CreateWindow("CApp 01", SDL_WINDOWPOS_CENTERED,
+                              SDL_WINDOWPOS_CENTERED, app.width,
+                              app.height, windowFlags);
 
-    if (!window)
+    if (!app.window)
     {
         std::cerr << "Failed to open window: " << SDL_GetError() << "\n";
         exit(1);
@@ -41,41 +38,42 @@ bool CApp::OnInit() {
     SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengles2");
 
     //create renderer
-    renderer = SDL_CreateRenderer(window, -1, rendererFlags);
+    app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
 
-    if (!renderer)
+    if (!app.renderer)
     {
         std::cerr << "Failed to create renderer: " << SDL_GetError() << "\n";
         exit(1);
     }
 
     //load the game textures, grid, X and O
-    if ((grid = CTexture::OnLoad(renderer, "assets/img/grid.png")) == NULL)
+    if ((grid = CTexture::OnLoad(app.renderer, "assets/img/grid.png")) == NULL)
     {
         return false;
     }
 
-    if ((mark_x = CTexture::OnLoad(renderer, "assets/img/x.png")) == NULL)
+    if ((mark_x = CTexture::OnLoad(app.renderer, "assets/img/x.png")) == NULL)
     {
         return false;
     }
 
-    if ((mark_o = CTexture::OnLoad(renderer, "assets/img/o.png")) == NULL)
+    if ((mark_o = CTexture::OnLoad(app.renderer, "assets/img/o.png")) == NULL)
     {
         return false;
     }
 
     //Render something
-    SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_RenderSetLogicalSize(app.renderer, app.width, app.height);
 
     //Set colour of renderer
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+    //Grid Blue is #7097B3
+    SDL_SetRenderDrawColor(app.renderer, 0xFF, 0xFF, 0xFF, SDL_ALPHA_OPAQUE);
 
     //Clear the screen to the set colour
-    SDL_RenderClear(renderer);
+    SDL_RenderClear(app.renderer);
 
     //Show all the has been done behind the scenes
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(app.renderer);
 
     Reset(GAME_START);
 

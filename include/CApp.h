@@ -4,16 +4,26 @@
 #include <SDL2/SDL.h>
 #include "CTexture.h"
 #include "CEvent.h"
-//#include <SDL2/SDL_opengles2.h>
 
 class CApp : public CEvent {
     private:
-        bool Running;
 
-        SDL_Window *window;
-        SDL_Renderer *renderer;
+        // global variables
+        struct App
+        {
+            // game running
+            bool Running;
 
-        // grid, X and O for tic-tac-toe
+            // global SDL objects
+            SDL_Window *window;
+            SDL_Renderer *renderer;
+
+            // game constants
+            uint16_t width;
+            uint16_t height;
+        } app;
+
+        // game textures
         SDL_Texture *grid;
         SDL_Texture *mark_x;
         SDL_Texture *mark_o;
