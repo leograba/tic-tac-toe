@@ -13,12 +13,12 @@ extraparms:
     release: {}
 id: a2d87c96-a197-40ff-aa3f-3c9b0519e706
 images:
-    debug: sha256:f0d044df9b5c829edb7b763cb444976016eb7bc88bc131a404876e866f69acf7
+    debug: sha256:64661aeb414adb22f58571992d99581f88800532d723918c07c42c6bf47924b6
     release: ''
 imagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706
     release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706
-modificationdate: '2021-07-25T13:22:21.059912'
+modificationdate: '2021-07-30T00:35:50.648698'
 networks:
     common: []
     debug: []
@@ -92,16 +92,17 @@ props:
         command: ''
         devpackages: git cmake ninja-build zip unzip gettext asciidoctor libpng-dev:#%platform.debian-arch%#
             libsdl2-dev:#%platform.debian-arch%# libsdl2-image-dev:#%platform.debian-arch%#
-            libopenal-dev:#%platform.debian-arch%# libphysfs-dev:#%platform.debian-arch%#
-            libvorbis-dev:#%platform.debian-arch%# libtheora-dev:#%platform.debian-arch%#
-            libxrandr-dev:#%platform.debian-arch%# libfribidi-dev:#%platform.debian-arch%#
-            libfreetype6-dev:#%platform.debian-arch%# libharfbuzz-dev:#%platform.debian-arch%#
-            libfontconfig1-dev:#%platform.debian-arch%# libcurl4-gnutls-dev:#%platform.debian-arch%#
-            gnutls-dev:#%platform.debian-arch%# libsodium-dev:#%platform.debian-arch%#
-            libsqlite3-dev:#%platform.debian-arch%# libvulkan-dev:#%platform.debian-arch%#
-            libwayland-dev:#%platform.debian-arch%# imx-gpu-viv-wayland-dev:#%platform.debian-arch%#
-            libglew-dev:#%platform.debian-arch%# glslang-dev:#%platform.debian-arch%#
-            libglm-dev:#%platform.debian-arch%# gambas3-gb-opengl-glsl:#%platform.debian-arch%#
+            libsdl2-ttf-dev:#%platform.debian-arch%# libopenal-dev:#%platform.debian-arch%#
+            libphysfs-dev:#%platform.debian-arch%# libvorbis-dev:#%platform.debian-arch%#
+            libtheora-dev:#%platform.debian-arch%# libxrandr-dev:#%platform.debian-arch%#
+            libfribidi-dev:#%platform.debian-arch%# libfreetype6-dev:#%platform.debian-arch%#
+            libharfbuzz-dev:#%platform.debian-arch%# libfontconfig1-dev:#%platform.debian-arch%#
+            libcurl4-gnutls-dev:#%platform.debian-arch%# gnutls-dev:#%platform.debian-arch%#
+            libsodium-dev:#%platform.debian-arch%# libsqlite3-dev:#%platform.debian-arch%#
+            libvulkan-dev:#%platform.debian-arch%# libwayland-dev:#%platform.debian-arch%#
+            imx-gpu-viv-wayland-dev:#%platform.debian-arch%# libglew-dev:#%platform.debian-arch%#
+            glslang-dev:#%platform.debian-arch%# libglm-dev:#%platform.debian-arch%#
+            gambas3-gb-opengl-glsl:#%platform.debian-arch%#
         env: ENV SDL_VIDEODRIVER="wayland" ACCEPT_FSL_EULA=1
         exename: capp
         expose: ''
@@ -110,7 +111,7 @@ props:
             libxrandr2 libfribidi-bin libfribidi0 libfreetype6 libharfbuzz0b libharfbuzz-bin
             libharfbuzz-gobject0 libharfbuzz-icu0 libfontconfig1 libcurl4 libcurl3-gnutls
             libgnutls30 libgnutlsxx28  libsodium23 libsqlite3-0 libsqlite3-ocaml xdg-utils
-            libsdl2-2.0-0 libsdl2-image-2.0-0
+            libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-ttf-2.0-0
         language: c-cpp-nossh
         preinstallcommands: ''
         sdkpostinstallcommands: ''
@@ -124,7 +125,7 @@ props:
     release: {}
 publickey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7vn0Zmqc6gS0SRrLZ8bm8O7dyq+WsmGvPdHRCNaGglJ3/8+QWIh1IywMDqiMqmbSqGsueYLBVG+H4hVZ8OJLcjbglPcBiT9KH1GjabFkrKAWfza6Jury2OectKZMdCDLHUUDyc89PKZfiXAHn2DBUi7CqxjUNEkRrnfohsUeleCBXguzOL/Q+ciE0wBw0SjUaoxBWalKrnWo1CAQtwNIbS22vWxofso91fLrJSDyKbOlMFD3qzOMc7ovPatkCHAUCtasKWNBoNZCYCNXTVnuJ/KD3sP2SUjAdFPts8hktxQxf3RYl+W/+NS1p09NjO2JRxrewwgsbeXUH5/jmPjxx
 sdkimages:
-    debug: sha256:35b66f5c871ec8e3eaf12c73959161c5b7b2acd98c911304bac44934d96ccaff
+    debug: sha256:b34de16eff216bc4f813c22f40166da29c305b24194235fb7aa05ec87b498332
     release: ''
 sdkimagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image

@@ -4,6 +4,10 @@ void CApp::OnCleanup() {
     SDL_DestroyTexture(grid);
     SDL_DestroyTexture(mark_x);
     SDL_DestroyTexture(mark_o);
+    SDL_DestroyTexture(text_header);
+    SDL_DestroyTexture(text_player_x);
+    SDL_DestroyTexture(text_player_o);
+    TTF_CloseFont(font);
 
     if (app.renderer){
         SDL_DestroyRenderer(app.renderer);
@@ -17,5 +21,6 @@ void CApp::OnCleanup() {
     }
 
     IMG_Quit();
+    TTF_Quit();
     SDL_Quit();
 }

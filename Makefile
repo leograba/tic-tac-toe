@@ -16,7 +16,7 @@ ASSETS := assets/
 
 # Flags
 SDL_CFLAGS := $(shell sdl2-config --cflags)
-SDL_LDFLAGS := $(shell sdl2-config --libs) -lSDL2_image
+SDL_LDFLAGS := $(shell sdl2-config --libs) -lSDL2_image -lSDL2_ttf
 
 CFLAGS := $(CFLAGS) -Wall -Werror -pedantic -Wshadow -Wstrict-aliasing -Wstrict-overflow -I/usr/include
 LDFLAGS := $(shell pkg-config --libs glesv2)

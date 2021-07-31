@@ -15,6 +15,15 @@ bool CApp::OnInit() {
         return false;
     }
 
+    // Missing init for SDL_image, though it does not produce errors
+
+    //initialize SDL_ttf
+    if (TTF_Init() < 0)
+    {
+        std::cerr << "Couldn't initialize SDL_ttf: " << TTF_GetError() << "\n";
+        return false;
+    }
+
     std::cout << "SDL_GetCurrentVideoDriver: " << SDL_GetCurrentVideoDriver()
         << "\n";
 
@@ -47,6 +56,13 @@ bool CApp::OnInit() {
     if (!app.renderer)
     {
         std::cerr << "Failed to create renderer: " << SDL_GetError() << "\n";
+        exit(1);
+    }
+
+    //load the game font
+    if ((font = CText::OnLoad("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)) == NULL)
+    {
+        std::cerr << "Failed to load font: " << TTF_GetError() << "\n";
         exit(1);
     }
 

@@ -30,10 +30,14 @@ void CApp::OnRender()
             CTexture::OnDraw(app.renderer, mark_o, x, y, app.mark_size, app.mark_size);
         }
     }
+
+    //draw the scoreboard
+    //CText::OnDraw(app.renderer, text_header, font, "Placar", app.grid_size + 20, app.height / 5);
+    CText::OnDraw(app.renderer, text_header, font, "Placar", app.grid_size + 20, app.height / 5);
+
     SDL_RenderPresent(app.renderer);
 
     //tell who is the winner
-
     if (Winner != -1)
     {
         SDL_RenderClear(app.renderer);
