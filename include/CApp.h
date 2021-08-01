@@ -42,6 +42,8 @@ class CApp : public CEvent {
     private:
         int GridStatus[9];
         int CurrentPlayer;
+        int VersusAI;
+        int AITurn;
         int Winner;
         struct Score
         {

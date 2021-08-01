@@ -15,6 +15,8 @@ CApp::CApp() {
 
     // Initialize game state
     CurrentPlayer = 0;
+    VersusAI = 1;
+    AITurn = 0;
     Winner = -1;
 }
 
@@ -53,6 +55,7 @@ void CApp::Reset(int init)
     if (init == GAME_RESTART)
         SDL_Delay(5000);
     CurrentPlayer = 0;
+    AITurn = 0;
     Winner = -1;
 }
 

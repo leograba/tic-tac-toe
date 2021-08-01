@@ -47,6 +47,10 @@ void CApp::OnRender()
     CText::OnDraw(app.renderer, text_header, font, std::to_string(score.score_tie),
                   app.width, app.grid_size, app.height / 5 + 9 * TTF_FontLineSkip(font));
 
+    // only let the AI play after the human action is rendered
+    if (VersusAI == 1 && CurrentPlayer == 1)
+        AITurn = 1;
+
     SDL_RenderPresent(app.renderer);
 
     //tell who is the winner
