@@ -32,8 +32,20 @@ void CApp::OnRender()
     }
 
     //draw the scoreboard
-    //CText::OnDraw(app.renderer, text_header, font, "Placar", app.grid_size + 20, app.height / 5);
-    CText::OnDraw(app.renderer, text_header, font, "Placar", app.grid_size + 20, app.height / 5);
+    CText::OnDraw(app.renderer, text_header, font, "Placar", app.width,
+                  app.grid_size, app.height / 5);
+    CText::OnDraw(app.renderer, text_header, font, "Jogador X", app.width,
+                  app.grid_size, app.height / 5 + 2 * TTF_FontLineSkip(font));
+    CText::OnDraw(app.renderer, text_header, font, std::to_string(score.score_x),
+                  app.width, app.grid_size, app.height / 5 + 3 * TTF_FontLineSkip(font));
+    CText::OnDraw(app.renderer, text_header, font, "Jogador O", app.width,
+                  app.grid_size, app.height / 5 + 5 * TTF_FontLineSkip(font));
+    CText::OnDraw(app.renderer, text_header, font, std::to_string(score.score_o),
+                  app.width, app.grid_size, app.height / 5 + 6 * TTF_FontLineSkip(font));
+    CText::OnDraw(app.renderer, text_header, font, "Empate", app.width,
+                  app.grid_size, app.height / 5 + 8 * TTF_FontLineSkip(font));
+    CText::OnDraw(app.renderer, text_header, font, std::to_string(score.score_tie),
+                  app.width, app.grid_size, app.height / 5 + 9 * TTF_FontLineSkip(font));
 
     SDL_RenderPresent(app.renderer);
 
