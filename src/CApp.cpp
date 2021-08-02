@@ -57,6 +57,7 @@ void CApp::Reset(int init)
     CurrentPlayer = 0;
     AITurn = 0;
     Winner = -1;
+    app.State = STATE_DEFAULT;
 }
 
 void CApp::SetCell(int ID, int Type)
@@ -78,6 +79,7 @@ void CApp::ComputeScore(int winner)
     else if (winner == GRID_TYPE_O)
         score.score_o++;
     Winner = winner;
+    app.State = STATE_WIN;
 }
 
 void CApp::CheckWinner()

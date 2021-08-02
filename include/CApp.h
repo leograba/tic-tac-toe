@@ -14,6 +14,7 @@ class CApp : public CEvent {
         {
             // game running
             bool Running;
+            int State;
 
             // global SDL objects
             SDL_Window *window;
@@ -26,7 +27,7 @@ class CApp : public CEvent {
             int grid_size;
             int mark_size;
         };
-        App app = {true, NULL, NULL, 800, 480, 480, 480/3};
+        App app = {true, STATE_DEFAULT, NULL, NULL, 800, 480, 480, 480/3};
 
         // game textures
         SDL_Texture *grid;
@@ -63,6 +64,12 @@ class CApp : public CEvent {
         {
             GAME_START = 0,
             GAME_RESTART
+        };
+        enum
+        {
+            STATE_DEFAULT = 0,
+            STATE_WIN,
+            STATE_MENU
         };
 
     public:
