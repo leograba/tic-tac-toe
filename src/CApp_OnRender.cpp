@@ -54,10 +54,10 @@ void CApp::OnRender()
     {
         //tell who is the winner
         SDL_RenderClear(app.renderer);
+        CTexture::OnDraw(app.renderer, grid, 0, 0, app.grid_size, app.grid_size);
         switch (Winner)
         {
         case GRID_TYPE_NONE: // draw
-            CTexture::OnDraw(app.renderer, grid, 0, 0, app.grid_size, app.grid_size);
             CTexture::OnDraw(app.renderer, mark_x,
                             0, app.grid_size / 4,
                             app.grid_size / 2 , app.grid_size / 2);
@@ -66,11 +66,9 @@ void CApp::OnRender()
                             app.grid_size / 2, app.grid_size / 2);
             break;
         case GRID_TYPE_X: // X win
-            CTexture::OnDraw(app.renderer, grid, 0, 0, app.grid_size, app.grid_size);
             CTexture::OnDraw(app.renderer, mark_x, 0, 0, app.grid_size, app.grid_size);
             break;
         case GRID_TYPE_O: // O win
-            CTexture::OnDraw(app.renderer, grid, 0, 0, app.grid_size, app.grid_size);
             CTexture::OnDraw(app.renderer, mark_o, 0, 0, app.grid_size, app.grid_size);
             break;
         default:
