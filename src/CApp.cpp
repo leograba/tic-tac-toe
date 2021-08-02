@@ -2,6 +2,21 @@
 
 CApp::CApp() {
 
+    // Initialize global variables
+    // Game state
+    app.Running = true;
+    app.State = STATE_DEFAULT;
+
+    // Global SDL objects
+    app.window = NULL;
+    app.renderer = NULL;
+
+    // Game constants
+    app.width = 800;
+    app.height = 480;
+    app.grid_size = 480;
+    app.mark_size = 480 / 3;
+
     // Initialize textures
     grid = NULL;
     mark_x = NULL;

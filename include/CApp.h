@@ -12,7 +12,7 @@ class CApp : public CEvent {
         // global variables
         struct App
         {
-            // game running
+            // game state
             bool Running;
             int State;
 
@@ -27,7 +27,7 @@ class CApp : public CEvent {
             int grid_size;
             int mark_size;
         };
-        App app = {true, STATE_DEFAULT, NULL, NULL, 800, 480, 480, 480/3};
+        App app;
 
         // game textures
         SDL_Texture *grid;
