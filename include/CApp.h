@@ -40,7 +40,7 @@ class CApp : public CEvent {
         // font
         TTF_Font *font;
 
-    private:
+        // game state
         int GridStatus[9];
         int CurrentPlayer;
         int VersusAI;
@@ -77,7 +77,6 @@ class CApp : public CEvent {
 
         int OnExecute();
 
-    public:
         bool OnInit();
 
         void OnEvent(SDL_Event *Event);

@@ -14,7 +14,6 @@ private:
 public:
     CAI();
 
-public:
     static void NextMoveRand(int grid[9], int *player, int *turn);
 };
 

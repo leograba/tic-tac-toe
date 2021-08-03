@@ -11,7 +11,6 @@ class CTexture
 public:
     CTexture();
 
-public:
     static SDL_Texture *OnLoad(SDL_Renderer *renderer, std::string Filename);
 
     static bool OnDraw(SDL_Renderer *renderer, SDL_Texture *texture);
