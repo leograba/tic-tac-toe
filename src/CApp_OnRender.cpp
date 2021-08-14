@@ -80,7 +80,22 @@ void CApp::OnRender()
     }
     else if (app.State == STATE_MENU)
     {
-        // placeholder for menu
+        //clear the screen
+        SDL_RenderClear(app.renderer);
+
+        //draw the buttons
+        CTexture::OnDraw(app.renderer, menu_button, app.menubtn_vsplayer);
+        CTexture::OnDraw(app.renderer, menu_button, app.menubtn_vscomputer);
+
+        //draw the text
+        CText::OnDraw(app.renderer, text_header, font, "Escolha seu oponente",
+                      app.width, 0, app.height / 5);
+        CText::OnDraw(app.renderer, text_header, font, "Outro Jogador",
+                      app.menubtn_vsplayer);
+        CText::OnDraw(app.renderer, text_header, font, "Computador",
+                      app.menubtn_vscomputer);
+
+        SDL_RenderPresent(app.renderer);
     }
 
 }

@@ -26,10 +26,15 @@ class CApp : public CEvent {
 
             int grid_size;
             int mark_size;
+
+            const double MENUBTN_RATIO = 487.0 / 200.0; //original size;
+            SDL_Rect menubtn_vsplayer;
+            SDL_Rect menubtn_vscomputer;
         };
         App app;
 
         // game textures
+        SDL_Texture *menu_button;
         SDL_Texture *grid;
         SDL_Texture *mark_x;
         SDL_Texture *mark_o;

@@ -66,7 +66,12 @@ bool CApp::OnInit() {
         exit(1);
     }
 
-    //load the game textures, grid, X and O
+    //load the game textures
+    if ((menu_button = CTexture::OnLoad(app.renderer, "assets/img/menu-button.png")) == NULL)
+    {
+        return false;
+    }
+
     if ((grid = CTexture::OnLoad(app.renderer, "assets/img/grid.png")) == NULL)
     {
         return false;
@@ -94,8 +99,6 @@ bool CApp::OnInit() {
 
     //Show all the has been done behind the scenes
     SDL_RenderPresent(app.renderer);
-
-    Reset(GAME_START);
 
     return true;
 }

@@ -5,7 +5,7 @@ CApp::CApp() {
     // Initialize global variables
     // Game state
     app.Running = true;
-    app.State = STATE_DEFAULT;
+    app.State = STATE_MENU;
 
     // Global SDL objects
     app.window = NULL;
@@ -14,10 +14,21 @@ CApp::CApp() {
     // Game constants
     app.width = 800;
     app.height = 480;
-    app.grid_size = 480;
-    app.mark_size = 480 / 3;
+    app.grid_size = app.height;
+    app.mark_size = app.height / 3;
+
+    app.menubtn_vsplayer.w = 0.35 * app.width;
+    app.menubtn_vsplayer.h = app.menubtn_vsplayer.w / app.MENUBTN_RATIO;
+    app.menubtn_vsplayer.x = 0.1 * app.width;
+    app.menubtn_vsplayer.y = (app.height - app.menubtn_vsplayer.h) / 2;
+
+    app.menubtn_vscomputer.w = app.menubtn_vsplayer.w;
+    app.menubtn_vscomputer.h = app.menubtn_vsplayer.h;
+    app.menubtn_vscomputer.x = 0.55 * app.width;
+    app.menubtn_vscomputer.y = app.menubtn_vsplayer.y;
 
     // Initialize textures
+    menu_button = NULL;
     grid = NULL;
     mark_x = NULL;
     mark_o = NULL;

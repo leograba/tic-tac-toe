@@ -19,6 +19,8 @@ public:
 
     static bool OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y, int w, int h);
 
+    static bool OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, SDL_Rect DestR);
+
     static bool OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y, int x2, int y2, int w, int h);
 };
 

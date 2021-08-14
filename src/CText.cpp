@@ -83,3 +83,37 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
 
     return true;
 }
+
+bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
+                   std::string Text, SDL_Rect Dest)
+{
+    if (renderer == NULL)
+    {
+        return false;
+    }
+
+    // font is white and BG is a shade of blue
+    SDL_Color font_color = {0xFF, 0xFF, 0xFF};
+    SDL_Color bg_color = {0x70, 0x97, 0xB3};
+
+    SDL_Surface *text;
+    //text = TTF_RenderText_Solid(font, Text.c_str(), font_color);
+    text = TTF_RenderText_Shaded(font, Text.c_str(), font_color, bg_color);
+
+    if (!text)
+    {
+        std::cerr << "Failed to render text: " << TTF_GetError() << "\n";
+    }
+
+    texture = SDL_CreateTextureFromSurface(renderer, text);
+
+    //center align with given rectangle
+    int x = Dest.x + (Dest.w - text->w) / 2;
+    int y = Dest.y + (Dest.h - text->h) / 2;
+    SDL_Rect DestR = {x, y, text->w, text->h};
+
+    SDL_RenderCopy(renderer, texture, NULL, &DestR);
+    SDL_FreeSurface(text);
+
+    return true;
+}

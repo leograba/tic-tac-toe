@@ -62,6 +62,18 @@ bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y
     return true;
 }
 
+bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, SDL_Rect DestR)
+{
+    if (renderer == NULL || texture == NULL)
+    {
+        return false;
+    }
+
+    SDL_RenderCopy(renderer, texture, NULL, &DestR);
+
+    return true;
+}
+
 bool CTexture::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, int x, int y, int x2, int y2, int w, int h)
 {
     if (renderer == NULL || texture == NULL)

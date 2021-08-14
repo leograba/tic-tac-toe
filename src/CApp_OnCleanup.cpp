@@ -1,6 +1,7 @@
 #include "CApp.h"
 
 void CApp::OnCleanup() {
+    SDL_DestroyTexture(menu_button);
     SDL_DestroyTexture(grid);
     SDL_DestroyTexture(mark_x);
     SDL_DestroyTexture(mark_o);
