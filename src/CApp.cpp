@@ -72,14 +72,12 @@ int CApp::OnExecute() {
     return 0;
 }
 
-void CApp::Reset(int init)
+void CApp::Reset()
 {
     for (int i = 0; i < 9; i++)
     {
         GridStatus[i] = GRID_TYPE_NONE;
     }
-    if (init == GAME_RESTART)
-        SDL_Delay(5000);
     CurrentPlayer = 0;
     AITurn = 0;
     Winner = -1;

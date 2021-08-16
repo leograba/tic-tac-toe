@@ -25,15 +25,21 @@ void CApp::OnLButtonDown(int mX, int mY)
             return;
         }
 
-        if (CurrentPlayer == 0)
+        if (AITurn == 1) // AI turn
         {
-            SetCell(ID, GRID_TYPE_X);
-            CurrentPlayer = 1;
+            // just ignore user clicks
         }
-        else
-        {
-            SetCell(ID, GRID_TYPE_O);
-            CurrentPlayer = 0;
+        else{ // User turn
+            if (CurrentPlayer == 0)
+            {
+                SetCell(ID, GRID_TYPE_X);
+                CurrentPlayer = 1;
+            }
+            else
+            {
+                SetCell(ID, GRID_TYPE_O);
+                CurrentPlayer = 0;
+            }
         }
     }
     else if (app.State == STATE_WIN)
@@ -68,7 +74,7 @@ void CApp::OnLButtonDown(int mX, int mY)
         if (start == true)
         {
             app.State = STATE_DEFAULT;
-            Reset(GAME_START);
+            Reset();
         }
     }
 }

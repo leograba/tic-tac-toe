@@ -2,6 +2,7 @@
     #define _CAPP_H_
 
 #include <SDL2/SDL.h>
+#include <chrono>
 #include "CTexture.h"
 #include "CText.h"
 #include "CEvent.h"
@@ -58,6 +59,7 @@ class CApp : public CEvent {
             int score_tie;
         };
         Score score = {0, 0, 0};
+        std::chrono::time_point<std::chrono::steady_clock> last_action;
 
         enum
         {
@@ -102,7 +104,7 @@ class CApp : public CEvent {
 
         void OnCleanup();
 
-        void Reset(int init);
+        void Reset();
 
         void SetCell(int ID, int Type);
 };
