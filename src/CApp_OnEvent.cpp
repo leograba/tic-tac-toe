@@ -35,8 +35,6 @@ void CApp::OnLButtonDown(int mX, int mY)
             SetCell(ID, GRID_TYPE_O);
             CurrentPlayer = 0;
         }
-
-        CheckWinner();
     }
     else if (app.State == STATE_WIN)
     {

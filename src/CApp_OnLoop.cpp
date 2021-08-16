@@ -11,8 +11,8 @@ void CApp::OnLoop()
         {
             CAI::NextMoveRand(GridStatus, &CurrentPlayer, &AITurn);
             SDL_Delay(1000);
-            CheckWinner();
         }
+        CheckWinner();
     }
     else if (app.State == STATE_WIN)
     {
