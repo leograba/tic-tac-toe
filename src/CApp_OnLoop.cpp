@@ -14,14 +14,17 @@ void CApp::OnLoop()
         // play against AI, if configured
         if (VersusAI !=0)
         {
-            if (AITurn == 1 && CurrentPlayer == 1) // AI turn
+            if (AITurn == 1) // AI turn
             {
-                // delay AI action to emulate a user
-                if (elapsed.count() > wait_time.count())
+                if (CurrentPlayer == 1) // only AI player with O supported
                 {
-                    CAI::NextMoveRand(GridStatus, &CurrentPlayer, &AITurn);
-                    last_action = std::chrono::steady_clock::now();
-                    AITurn = 0;
+                    // delay AI action to emulate a user
+                    if (elapsed.count() > wait_time.count())
+                    {
+                        CAI::NextMoveRand(GridStatus, &CurrentPlayer, &AITurn);
+                        last_action = std::chrono::steady_clock::now();
+                        AITurn = 0;
+                    }
                 }
             }
             else // player turn

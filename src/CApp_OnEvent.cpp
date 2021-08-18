@@ -25,11 +25,27 @@ void CApp::OnLButtonDown(int mX, int mY)
             return;
         }
 
-        if (AITurn == 1) // AI turn
+        if (VersusAI != 0) // if against AI
         {
-            // just ignore user clicks
+            if (AITurn == 1) // AI turn
+            {
+                // just ignore user clicks
+            }
+            else{ // User turn
+                if (CurrentPlayer == 0)
+                {
+                    SetCell(ID, GRID_TYPE_X);
+                    CurrentPlayer = 1;
+                }
+                else
+                {
+                    // currently the AI is only player O, not X
+                }
+                AITurn = 1;
+            }
         }
-        else{ // User turn
+        else
+        {
             if (CurrentPlayer == 0)
             {
                 SetCell(ID, GRID_TYPE_X);
