@@ -27,6 +27,11 @@ CApp::CApp() {
     app.menubtn_vscomputer.x = 0.55 * app.width;
     app.menubtn_vscomputer.y = app.menubtn_vsplayer.y;
 
+    app.menubtn_back.w = 0.065 * app.width;
+    app.menubtn_back.h = app.menubtn_back.w / app.BACKBTN_RATIO;
+    app.menubtn_back.x = 0.935 * app.width - app.BACKBTN_PADDING; // top-right corner
+    app.menubtn_back.y = app.BACKBTN_PADDING;
+
     // Initialize textures
     menu_button = NULL;
     grid = NULL;

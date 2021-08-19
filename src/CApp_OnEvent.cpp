@@ -11,27 +11,38 @@ void CApp::OnLButtonDown(int mX, int mY)
 {
     if (app.State == STATE_DEFAULT)
     {
-        // The grid is a square, don't accept clicks outside it
-        if (mX > app.grid_size || mY > app.grid_size)
+        // The grid is a square, check if inside it
+        if (mX <= app.grid_size && mY <= app.grid_size)
         {
-            return;
-        }
+            int ID = (mX) / 160;
+            ID = ID + ((mY / 160) * 3);
 
-        int ID = (mX) / 160;
-        ID = ID + ((mY / 160) * 3);
-
-        if (GridStatus[ID] != GRID_TYPE_NONE)
-        {
-            return;
-        }
-
-        if (VersusAI != 0) // if against AI
-        {
-            if (AITurn == 1) // AI turn
+            if (GridStatus[ID] != GRID_TYPE_NONE)
             {
-                // just ignore user clicks
+                return;
             }
-            else{ // User turn
+
+            if (VersusAI != 0) // if against AI
+            {
+                if (AITurn == 1) // AI turn
+                {
+                    // just ignore user clicks
+                }
+                else{ // User turn
+                    if (CurrentPlayer == 0)
+                    {
+                        SetCell(ID, GRID_TYPE_X);
+                        CurrentPlayer = 1;
+                    }
+                    else
+                    {
+                        // currently the AI is only player O, not X
+                    }
+                    AITurn = 1;
+                }
+            }
+            else
+            {
                 if (CurrentPlayer == 0)
                 {
                     SetCell(ID, GRID_TYPE_X);
@@ -39,23 +50,18 @@ void CApp::OnLButtonDown(int mX, int mY)
                 }
                 else
                 {
-                    // currently the AI is only player O, not X
+                    SetCell(ID, GRID_TYPE_O);
+                    CurrentPlayer = 0;
                 }
-                AITurn = 1;
             }
         }
-        else
+        // back button
+        else if ((mX > app.menubtn_back.x)
+                 && (mX < (app.menubtn_back.x + app.menubtn_back.w + app.BACKBTN_PADDING))
+                 && (mY > app.menubtn_back.y - app.BACKBTN_PADDING)
+                 && (mY < (app.menubtn_back.y + app.menubtn_back.h)))
         {
-            if (CurrentPlayer == 0)
-            {
-                SetCell(ID, GRID_TYPE_X);
-                CurrentPlayer = 1;
-            }
-            else
-            {
-                SetCell(ID, GRID_TYPE_O);
-                CurrentPlayer = 0;
-            }
+            app.State = STATE_MENU;
         }
     }
     else if (app.State == STATE_WIN)
@@ -104,7 +110,11 @@ void CApp::OnResize(int width, int height)
 
     if (app.State == STATE_DEFAULT)
     {
-        // No special calculation
+        // Resize back button
+        app.menubtn_back.w = 0.065 * app.width;
+        app.menubtn_back.h = app.menubtn_back.w / app.BACKBTN_RATIO;
+        app.menubtn_back.x = 0.935 * app.width - app.BACKBTN_PADDING; // top-right corner
+        app.menubtn_back.y = app.BACKBTN_PADDING;
     }
 
     else if (app.State == STATE_WIN)

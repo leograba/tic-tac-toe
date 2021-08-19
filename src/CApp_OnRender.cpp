@@ -44,6 +44,9 @@ void CApp::OnRender()
         CText::OnDraw(app.renderer, text_header, font, std::to_string(score.score_tie),
                     app.width, app.grid_size, app.height / 5 + 9 * TTF_FontLineSkip(font));
 
+        //draw the sign to go back to the menu
+        CTexture::OnDraw(app.renderer, back_button, app.menubtn_back);
+
         SDL_RenderPresent(app.renderer);
     }
     else if (app.State == STATE_WIN)

@@ -72,6 +72,11 @@ bool CApp::OnInit() {
         return false;
     }
 
+    if ((back_button = CTexture::OnLoad(app.renderer, "assets/img/back-button.png")) == NULL)
+    {
+        return false;
+    }
+
     if ((grid = CTexture::OnLoad(app.renderer, "assets/img/grid.png")) == NULL)
     {
         return false;
