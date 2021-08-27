@@ -5,11 +5,10 @@ services:
     device_cgroup_rules:
     - c 199:* rmw
     - c 226:* rmw
-    image: leograba/tic-tac-toe:0.1.0-vivante-arm64v8
+    image: leograba/tic-tac-toe:0.1.0-arm32v7
     volumes:
     - /tmp:/tmp:rw
     - /dev/dri:/dev/dri:rw
-    - /dev/galcore:/dev/galcore:rw
   weston:
     cap_add:
     - CAP_SYS_TTY_CONFIG
@@ -17,11 +16,8 @@ services:
     - c 4:0 rmw
     - c 4:7 rmw
     - c 13:* rmw
-    - c 199:* rmw
     - c 226:* rmw
-    environment:
-    - ACCEPT_FSL_EULA=1
-    image: torizon/weston-vivante:2.5
+    image: torizon/weston:2.5
     network_mode: host
     volumes:
     - source: /tmp
