@@ -20,8 +20,8 @@ TTF_Font *CText::OnLoad(std::string Filename, int Pixels)
     return font_load;
 }
 
-bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
-                   std::string Text, int x, int y)
+bool CText::OnDraw(SDL_Renderer *renderer, TTF_Font *font, std::string Text,
+                   int x, int y)
 {
     if (renderer == NULL)
     {
@@ -41,17 +41,19 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
         std::cerr << "Failed to render text: " << TTF_GetError() << "\n";
     }
 
+    SDL_Texture *texture;
     texture = SDL_CreateTextureFromSurface(renderer, text);
 
     SDL_Rect DestR = {x, y, text->w, text->h};
 
     SDL_RenderCopy(renderer, texture, NULL, &DestR);
     SDL_FreeSurface(text);
+    SDL_DestroyTexture(texture);
 
     return true;
 }
 
-bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
+bool CText::OnDraw(SDL_Renderer *renderer, TTF_Font *font,
                    std::string Text, int scr_width, int grid_size, int y)
 {
     if (renderer == NULL)
@@ -72,6 +74,7 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
         std::cerr << "Failed to render text: " << TTF_GetError() << "\n";
     }
 
+    SDL_Texture *texture;
     texture = SDL_CreateTextureFromSurface(renderer, text);
 
     //center align
@@ -80,11 +83,12 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
 
     SDL_RenderCopy(renderer, texture, NULL, &DestR);
     SDL_FreeSurface(text);
+    SDL_DestroyTexture(texture);
 
     return true;
 }
 
-bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
+bool CText::OnDraw(SDL_Renderer *renderer, TTF_Font *font,
                    std::string Text, SDL_Rect Dest)
 {
     if (renderer == NULL)
@@ -105,6 +109,7 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
         std::cerr << "Failed to render text: " << TTF_GetError() << "\n";
     }
 
+    SDL_Texture *texture;
     texture = SDL_CreateTextureFromSurface(renderer, text);
 
     //center align with given rectangle
@@ -114,6 +119,7 @@ bool CText::OnDraw(SDL_Renderer *renderer, SDL_Texture *texture, TTF_Font *font,
 
     SDL_RenderCopy(renderer, texture, NULL, &DestR);
     SDL_FreeSurface(text);
+    SDL_DestroyTexture(texture);
 
     return true;
 }

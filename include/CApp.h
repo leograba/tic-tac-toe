@@ -43,9 +43,6 @@ class CApp : public CEvent {
         SDL_Texture *grid;
         SDL_Texture *mark_x;
         SDL_Texture *mark_o;
-        SDL_Texture *text_header;
-        SDL_Texture *text_player_x;
-        SDL_Texture *text_player_o;
 
         // font
         TTF_Font *font;

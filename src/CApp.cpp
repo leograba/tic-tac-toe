@@ -37,9 +37,6 @@ CApp::CApp() {
     grid = NULL;
     mark_x = NULL;
     mark_o = NULL;
-    text_header = NULL;
-    text_player_x = NULL;
-    text_player_o = NULL;
 
     // Initialize font
     font = NULL;
