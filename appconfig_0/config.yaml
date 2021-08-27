@@ -14,11 +14,11 @@ extraparms:
 id: a2d87c96-a197-40ff-aa3f-3c9b0519e706
 images:
     debug: sha256:64661aeb414adb22f58571992d99581f88800532d723918c07c42c6bf47924b6
-    release: ''
+    release: sha256:e68bc32519a0883fdd9da532c31feb76ee383905b05b7409cf0186c86c9cacfd
 imagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706
     release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706
-modificationdate: '2021-08-18T13:12:58.090132'
+modificationdate: '2021-08-27T15:12:04.969483'
 networks:
     common: []
     debug: []
@@ -116,7 +116,7 @@ props:
         preinstallcommands: ''
         sdkpostinstallcommands: ''
         sdkpreinstallcommands: ''
-        tag: leograba/tic-tac-toe:0.1.0
+        tag: leograba/tic-tac-toe:0.1.0-vivante-arm64v8
         targetcommands: ''
         targetfiles: ''
     debug:
@@ -127,7 +127,7 @@ props:
 publickey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7vn0Zmqc6gS0SRrLZ8bm8O7dyq+WsmGvPdHRCNaGglJ3/8+QWIh1IywMDqiMqmbSqGsueYLBVG+H4hVZ8OJLcjbglPcBiT9KH1GjabFkrKAWfza6Jury2OectKZMdCDLHUUDyc89PKZfiXAHn2DBUi7CqxjUNEkRrnfohsUeleCBXguzOL/Q+ciE0wBw0SjUaoxBWalKrnWo1CAQtwNIbS22vWxofso91fLrJSDyKbOlMFD3qzOMc7ovPatkCHAUCtasKWNBoNZCYCNXTVnuJ/KD3sP2SUjAdFPts8hktxQxf3RYl+W/+NS1p09NjO2JRxrewwgsbeXUH5/jmPjxx
 sdkimages:
     debug: sha256:b34de16eff216bc4f813c22f40166da29c305b24194235fb7aa05ec87b498332
-    release: ''
+    release: sha256:b34de16eff216bc4f813c22f40166da29c305b24194235fb7aa05ec87b498332
 sdkimagetags:
     debug: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_debug_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image
     release: sdl2-learning_arm64v8-wayland-base-vivante-no-ssh_bullseye_release_a2d87c96-a197-40ff-aa3f-3c9b0519e706_sdk_image
