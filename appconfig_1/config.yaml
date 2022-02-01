@@ -13,16 +13,18 @@ extraparms:
     release: {}
 id: 3a6bf5fe-28e7-499b-8834-afd83f72af21
 images:
-    debug: sha256:fad5577013198d8aa35de32928c6e57605282968a463622af7cd32f0db53b349
+    debug: sha256:b6eee4e21d04d03824cdbc8eccc0c16c76f1b94a48d5e5520a287e1e38fecd37
     release: sha256:bfdec806e7580b52f69f74f0c6327d69aea8b9d669bccaf4b377faf0d8db012d
 imagetags:
     debug: sdl2-learning_arm32v7-wayland-base-no-ssh_bullseye_debug_3a6bf5fe-28e7-499b-8834-afd83f72af21
     release: sdl2-learning_arm32v7-wayland-base-no-ssh_bullseye_release_3a6bf5fe-28e7-499b-8834-afd83f72af21
-modificationdate: '2021-08-27T15:21:08.482568'
+modificationdate: '2022-02-01T23:09:04.666135'
 networks:
     common: []
     debug: []
     release: []
+otapackagename: tic-tac-toe
+otapackageversion: 0.1.0-arm32v7
 platformid: arm32v7-wayland-base-no-ssh_bullseye
 ports:
     common: {}
@@ -125,7 +127,7 @@ props:
     release: {}
 publickey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb7SYKVzatHt5zjUC7fMcWwN+3gftP6dF4E5WyDnNplMJZY5/AVBR1qvPd4yu8hFTFEMPa+20KvLBltrTyLdRkF+zhkrqYTyO7neHlKX2rfth7PPdX6u1DmZx54SBLI4Xht4wg0o54ucNkfHJwgU2sCtiaSwLxlQGMrXxVJR7NGKw2TrK8+pQizvPideGkqiDdTac/AtxxrQuWkLAqSOQ2iXZis7yV+JH/S/ALtBqC0/0U++c14qrplkcEsIra9gDCQ15vSubc1w6ZybaeoB7FVQ8JbJBT3mW2CvgFNN1BVo9izp1W1SfqYxSXyADY/Qgz9iMm2DXMr5d316LOIEUR
 sdkimages:
-    debug: sha256:a682608bfae3630465dd00e303917cf40d803c700edffaff966dc25191a9a47d
+    debug: sha256:d218789d764b616d0dcba4680a63e443e2f82527846683d73980aa48661fb74c
     release: sha256:a682608bfae3630465dd00e303917cf40d803c700edffaff966dc25191a9a47d
 sdkimagetags:
     debug: sdl2-learning_arm32v7-wayland-base-no-ssh_bullseye_debug_3a6bf5fe-28e7-499b-8834-afd83f72af21_sdk_image
