@@ -103,37 +103,31 @@ void CApp::OnLButtonDown(int mX, int mY)
 
 void CApp::OnResize(int width, int height)
 {
+
+    // Save new dimensions
     app.width = width;
     app.height = height;
+
+    // Resize grid
     app.grid_size = std::min(width, height);
     app.mark_size = app.grid_size / 3;
 
-    if (app.State == STATE_DEFAULT)
-    {
-        // Resize back button
-        app.menubtn_back.w = 0.065 * app.width;
-        app.menubtn_back.h = app.menubtn_back.w / app.BACKBTN_RATIO;
-        app.menubtn_back.x = 0.935 * app.width - app.BACKBTN_PADDING; // top-right corner
-        app.menubtn_back.y = app.BACKBTN_PADDING;
-    }
+    // Resize back button
+    app.menubtn_back.w = 0.065 * app.width;
+    app.menubtn_back.h = app.menubtn_back.w / app.BACKBTN_RATIO;
+    app.menubtn_back.x = 0.935 * app.width - app.BACKBTN_PADDING; // top-right corner
+    app.menubtn_back.y = app.BACKBTN_PADDING;
 
-    else if (app.State == STATE_WIN)
-    {
-        // Do nothing
-    }
-    else if (app.State == STATE_MENU)
-    {
-        // Resize menu buttons
-        app.menubtn_vsplayer.w = 0.35 * app.width;
-        app.menubtn_vsplayer.h = app.menubtn_vsplayer.w / app.MENUBTN_RATIO;
-        app.menubtn_vsplayer.x = 0.1 * app.width;
-        app.menubtn_vsplayer.y = (app.height - app.menubtn_vsplayer.h) / 2;
+    // Resize menu buttons
+    app.menubtn_vsplayer.w = 0.35 * app.width;
+    app.menubtn_vsplayer.h = app.menubtn_vsplayer.w / app.MENUBTN_RATIO;
+    app.menubtn_vsplayer.x = 0.1 * app.width;
+    app.menubtn_vsplayer.y = (app.height - app.menubtn_vsplayer.h) / 2;
 
-        app.menubtn_vscomputer.w = app.menubtn_vsplayer.w;
-        app.menubtn_vscomputer.h = app.menubtn_vsplayer.h;
-        app.menubtn_vscomputer.x = 0.55 * app.width;
-        app.menubtn_vscomputer.y = app.menubtn_vsplayer.y;
-    }
+    app.menubtn_vscomputer.w = app.menubtn_vsplayer.w;
+    app.menubtn_vscomputer.h = app.menubtn_vsplayer.h;
+    app.menubtn_vscomputer.x = 0.55 * app.width;
+    app.menubtn_vscomputer.y = app.menubtn_vsplayer.y;
 
     SDL_RenderSetLogicalSize(app.renderer, app.width, app.height);
 }
