@@ -14,8 +14,8 @@ void CApp::OnLButtonDown(int mX, int mY)
         // The grid is a square, check if inside it
         if (mX <= app.grid_size && mY <= app.grid_size)
         {
-            int ID = (mX) / 160;
-            ID = ID + ((mY / 160) * 3);
+            int ID = (mX) / app.mark_size;
+            ID = ID + ((mY / app.mark_size) * 3);
 
             if (GridStatus[ID] != GRID_TYPE_NONE)
             {

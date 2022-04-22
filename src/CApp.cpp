@@ -15,7 +15,7 @@ CApp::CApp() {
     app.width = 800;
     app.height = 480;
     app.grid_size = app.height;
-    app.mark_size = app.height / 3;
+    app.mark_size = app.grid_size / 3;
 
     app.menubtn_vsplayer.w = 0.35 * app.width;
     app.menubtn_vsplayer.h = app.menubtn_vsplayer.w / app.MENUBTN_RATIO;
