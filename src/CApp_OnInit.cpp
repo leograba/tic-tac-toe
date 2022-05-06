@@ -6,7 +6,8 @@ bool CApp::OnInit() {
 
     rendererFlags = SDL_RENDERER_ACCELERATED;
     windowFlags = SDL_WINDOW_OPENGL |
-                  SDL_WINDOW_RESIZABLE;
+                  SDL_WINDOW_RESIZABLE |
+                  SDL_WINDOW_FULLSCREEN_DESKTOP;
 
     //initialize SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
