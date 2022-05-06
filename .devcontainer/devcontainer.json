@@ -22,6 +22,6 @@
     "mounts": [
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.moses,target=/home/torizon/.moses,type=bind",
         "source=//var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-        "source=/home/leonardo/.vscode/extensions/toradex.torizon-early-access-1.4.277,target=/home/torizon/.torizon-extension,type=bind"
+        "source=/home/leonardo/.vscode/extensions/toradex.torizon-early-access-1.5.203,target=/home/torizon/.torizon-extension,type=bind"
     ]
 }
