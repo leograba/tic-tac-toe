@@ -24,7 +24,7 @@ networks:
     debug: []
     release: []
 otapackagename: tic-tac-toe
-otapackageversion: 0.1.0-vivante-arm64v8
+otapackageversion: 0.2.0-vivante-arm64v8
 platformid: arm64v8-wayland-base-vivante-no-ssh_bullseye
 ports:
     common: {}
@@ -118,7 +118,7 @@ props:
         preinstallcommands: ''
         sdkpostinstallcommands: ''
         sdkpreinstallcommands: ''
-        tag: leograba/tic-tac-toe:0.1.0-vivante-arm64v8
+        tag: leograba/tic-tac-toe:0.2.0-vivante-arm64v8
         targetcommands: ''
         targetfiles: ''
     debug:

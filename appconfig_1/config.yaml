@@ -24,7 +24,7 @@ networks:
     debug: []
     release: []
 otapackagename: tic-tac-toe
-otapackageversion: 0.1.0-arm32v7
+otapackageversion: 0.2.0-arm32v7
 platformid: arm32v7-wayland-base-no-ssh_bullseye
 ports:
     common: {}
@@ -117,7 +117,7 @@ props:
         preinstallcommands: ''
         sdkpostinstallcommands: ''
         sdkpreinstallcommands: ''
-        tag: leograba/tic-tac-toe:0.1.0-arm32v7
+        tag: leograba/tic-tac-toe:0.2.0-arm32v7
         targetcommands: ''
         targetfiles: ''
     debug:
